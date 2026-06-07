@@ -5,15 +5,15 @@ Projeto Astro configurado para deploy automático no GitHub Pages via GitHub Act
 ## Desenvolvimento
 
 ```sh
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
 ## Build
 
 ```sh
-npm run build
-npm run preview
+pnpm run build
+pnpm run preview
 ```
 
 ## Deploy
