@@ -1,17 +1,1027 @@
 ---
+const whatsappNumber = "5500000000000";
 
+const whatsappHref = (source: string) =>
+	`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+		`Oi, vim pelo site (${source}) e quero conversar sobre um projeto de design.`,
+	)}`;
+
+const clientLogos = ["Nora Cafe", "Lume Studio", "Casa Vira", "Mira Beauty", "Ateliê Modo"];
+
+const cases = [
+	{
+		title: "Nora Cafe",
+		type: "Identidade visual",
+		challenge: "Uma cafeteria de bairro precisava parecer mais premium sem perder acolhimento.",
+		solution: "Sistema visual com marca, paleta, embalagens e linguagem para redes sociais.",
+		result: "Mais consistência no ponto de venda e percepção de valor mais alta no lançamento.",
+		accent: "#d06d3b",
+	},
+	{
+		title: "Mira Beauty",
+		type: "Branding + embalagem",
+		challenge: "Uma linha de skincare precisava se diferenciar em um mercado visualmente saturado.",
+		solution: "Direção de arte minimalista, tipografia autoral e embalagem com alta presença em shelf.",
+		result: "Marca pronta para e-commerce, varejo e campanhas com a mesma assinatura visual.",
+		accent: "#c75682",
+	},
+	{
+		title: "Casa Vira",
+		type: "Social media",
+		challenge: "A marca tinha bons produtos, mas o Instagram não comunicava curadoria.",
+		solution: "Templates, direção fotográfica e calendário editorial com foco em desejo e clareza.",
+		result: "Feed mais comercial, fácil de manter e alinhado ao posicionamento da loja.",
+		accent: "#2f8b7c",
+	},
+	{
+		title: "Lume Studio",
+		type: "Web design",
+		challenge: "Um estúdio criativo precisava de uma presença digital simples, elegante e objetiva.",
+		solution: "Landing page com narrativa curta, prova visual e CTAs posicionados por intenção.",
+		result: "Apresentação mais profissional para tráfego pago, propostas e indicações.",
+		accent: "#4967c6",
+	},
+];
+
+const services = [
+	{
+		title: "Identidade visual",
+		description: "Para marcas que precisam parecer mais sólidas, desejáveis e memoráveis desde o primeiro contato.",
+		bestFor: "Ideal para lançamentos, reposicionamentos e negócios em crescimento.",
+	},
+	{
+		title: "Direção de social media",
+		description: "Para transformar um feed solto em uma vitrine coerente, bonita e fácil de reconhecer.",
+		bestFor: "Ideal para marcas que vendem pelo Instagram.",
+	},
+	{
+		title: "Embalagem e materiais",
+		description: "Para produtos que precisam ganhar presença física, valor percebido e acabamento comercial.",
+		bestFor: "Ideal para varejo, delivery, beleza, moda e alimentos.",
+	},
+	{
+		title: "Web design",
+		description: "Para apresentar seu negócio com clareza, boas imagens e uma jornada pensada para conversão.",
+		bestFor: "Ideal para landing pages, portfólios e páginas institucionais.",
+	},
+];
+
+const testimonials = [
+	{
+		quote:
+			"A nova identidade fez nossa marca finalmente parecer do tamanho do que entregamos. As pessoas passaram a entender nosso valor antes mesmo da primeira conversa.",
+		name: "Marina Lopes",
+		company: "Nora Cafe",
+		initials: "ML",
+	},
+	{
+		quote:
+			"O processo foi organizado do início ao fim. Saímos com uma marca bonita, mas principalmente com um sistema que a equipe consegue aplicar no dia a dia.",
+		name: "Bianca Torres",
+		company: "Mira Beauty",
+		initials: "BT",
+	},
+];
+
+const process = [
+	["Briefing", "Entendimento do negócio, público, referências e objetivo comercial do projeto."],
+	["Conceito", "Construção da direção criativa e do raciocínio visual que sustenta a marca."],
+	["Execução", "Desenvolvimento das peças, ajustes finos e aplicação do sistema em situações reais."],
+	["Entrega", "Arquivos organizados, guia de uso e orientações para a marca seguir consistente."],
+];
 ---
 
-<html lang="en">
+<!doctype html>
+<html lang="pt-BR">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<meta
+			name="description"
+			content="Portfólio de designer para marcas pequenas que querem parecer maiores, mais consistentes e mais desejáveis."
+		/>
+		<title>Designer de Identidades Visuais para Marcas Pequenas</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<header class="site-header" aria-label="Navegação principal">
+			<a class="brand" href="#topo" aria-label="Voltar ao início">KLM</a>
+			<nav>
+				<a href="#portfolio">Portfólio</a>
+				<a href="#servicos">Serviços</a>
+				<a href="#processo">Processo</a>
+				<a href="#sobre">Sobre</a>
+			</nav>
+		</header>
+
+		<main id="topo">
+			<section class="hero fold" aria-labelledby="hero-title">
+				<div class="hero-copy">
+					<p class="eyebrow">Design estratégico para marcas em crescimento</p>
+					<h1 id="hero-title">Identidades visuais que fazem marcas pequenas parecerem grandes.</h1>
+					<p class="lead">
+						Branding, social media, embalagem e web design para negócios que precisam vender melhor,
+						parecer mais profissionais e construir desejo desde o primeiro contato.
+					</p>
+					<div class="hero-actions">
+						<a class="button primary" href={whatsappHref("hero")} target="_blank" rel="noreferrer">
+							Vamos conversar sobre seu projeto
+						</a>
+						<span class="micro-proof">+30 marcas atendidas em identidade, digital e lançamento</span>
+					</div>
+				</div>
+
+				<div class="hero-visual" aria-label="Mosaico de trabalhos de design">
+					<article class="visual-card visual-card-large">
+						<span class="project-label">Branding</span>
+						<strong>Nora Cafe</strong>
+						<div class="cup-mark" aria-hidden="true"></div>
+					</article>
+					<article class="visual-card visual-card-tall">
+						<span class="project-label">Beauty</span>
+						<strong>Mira</strong>
+						<div class="package-stack" aria-hidden="true">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</article>
+					<article class="visual-card visual-card-dark">
+						<span class="project-label">Web</span>
+						<strong>Lume Studio</strong>
+					</article>
+					<article class="visual-card visual-card-line">
+						<span class="project-label">Social</span>
+						<strong>Casa Vira</strong>
+					</article>
+				</div>
+			</section>
+
+			<section class="credibility fold-compact" aria-label="Marcas atendidas">
+				<p>Marcas atendidas</p>
+				<div class="logo-strip">
+					{clientLogos.map((logo) => <span>{logo}</span>)}
+				</div>
+			</section>
+
+			<section class="portfolio fold" id="portfolio" aria-labelledby="portfolio-title">
+				<div class="section-heading">
+					<p class="eyebrow">Portfólio / Cases</p>
+					<h2 id="portfolio-title">Poucos projetos, muita intenção visual.</h2>
+					<p>
+						Uma curadoria de trabalhos pensados para posicionamento, percepção de valor e aplicação real
+						da marca no dia a dia.
+					</p>
+				</div>
+
+				<div class="case-grid">
+					{
+						cases.map((item) => (
+							<article class="case-card" style={`--accent:${item.accent}`}>
+								<div class="case-art" aria-hidden="true">
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>
+								<div class="case-content">
+									<p>{item.type}</p>
+									<h3>{item.title}</h3>
+									<dl>
+										<div>
+											<dt>Desafio</dt>
+											<dd>{item.challenge}</dd>
+										</div>
+										<div>
+											<dt>Solução</dt>
+											<dd>{item.solution}</dd>
+										</div>
+										<div>
+											<dt>Resultado</dt>
+											<dd>{item.result}</dd>
+										</div>
+									</dl>
+								</div>
+							</article>
+						))
+					}
+				</div>
+
+				<div class="section-cta">
+					<p>Gostou do que viu?</p>
+					<a class="button secondary" href={whatsappHref("portfolio")} target="_blank" rel="noreferrer">
+						Me chama no WhatsApp
+					</a>
+				</div>
+			</section>
+
+			<section class="services fold" id="servicos" aria-labelledby="services-title">
+				<div class="section-heading">
+					<p class="eyebrow">Serviços</p>
+					<h2 id="services-title">O que sua marca pode construir daqui.</h2>
+				</div>
+				<div class="service-grid">
+					{
+						services.map((service) => (
+							<article>
+								<h3>{service.title}</h3>
+								<p>{service.description}</p>
+								<span>{service.bestFor}</span>
+							</article>
+						))
+					}
+				</div>
+			</section>
+
+			<section class="testimonials fold" aria-labelledby="testimonials-title">
+				<div class="section-heading">
+					<p class="eyebrow">Prova social</p>
+					<h2 id="testimonials-title">Confiança de quem já passou pelo processo.</h2>
+				</div>
+				<div class="testimonial-grid">
+					{
+						testimonials.map((testimonial) => (
+							<figure>
+								<blockquote>{testimonial.quote}</blockquote>
+								<figcaption>
+									<span aria-hidden="true">{testimonial.initials}</span>
+									<strong>{testimonial.name}</strong>
+									<small>{testimonial.company}</small>
+								</figcaption>
+							</figure>
+						))
+					}
+				</div>
+				<div class="section-cta">
+					<p>Se a sua marca está pronta para parecer mais profissional, a conversa começa aqui.</p>
+					<a class="button primary" href={whatsappHref("depoimentos")} target="_blank" rel="noreferrer">
+						Quero falar sobre meu projeto
+					</a>
+				</div>
+			</section>
+
+			<section class="process fold" id="processo" aria-labelledby="process-title">
+				<div class="section-heading">
+					<p class="eyebrow">Como funciona</p>
+					<h2 id="process-title">Um método claro para transformar ideia em sistema visual.</h2>
+				</div>
+				<div class="process-list">
+					{
+						process.map(([title, description], index) => (
+							<article>
+								<span>{String(index + 1).padStart(2, "0")}</span>
+								<h3>{title}</h3>
+								<p>{description}</p>
+							</article>
+						))
+					}
+				</div>
+			</section>
+
+			<section class="about fold" id="sobre" aria-labelledby="about-title">
+				<div class="portrait" aria-label="Retrato profissional da designer">
+					<span>KLM</span>
+				</div>
+				<div>
+					<p class="eyebrow">Sobre</p>
+					<h2 id="about-title">Design com estética, método e intenção comercial.</h2>
+					<p>
+						Acredito que uma marca pequena não precisa parecer improvisada. Meu trabalho é traduzir
+						estratégia em uma presença visual que sustenta preço, cria reconhecimento e facilita decisões
+						em cada ponto de contato.
+					</p>
+					<p>
+						Ao longo da minha trajetória, desenvolvi identidades, materiais digitais e sistemas visuais
+						para negócios que queriam amadurecer sem perder personalidade.
+					</p>
+				</div>
+			</section>
+
+			<section class="final-cta fold" aria-labelledby="final-cta-title">
+				<p class="eyebrow">Agenda do mês</p>
+				<h2 id="final-cta-title">Vamos construir uma marca que pareça pronta para crescer?</h2>
+				<p>
+					Me chama no WhatsApp para uma conversa sem compromisso. Respondo com os próximos passos,
+					prazos e uma indicação honesta do melhor formato para o seu momento.
+				</p>
+				<a class="button primary large" href={whatsappHref("cta-final")} target="_blank" rel="noreferrer">
+					Vamos conversar pelo WhatsApp
+				</a>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<a class="brand" href="#topo">KLM</a>
+			<div>
+				<a href="https://instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+				<a href="https://behance.net/" target="_blank" rel="noreferrer">Behance</a>
+				<a href="mailto:contato@seudominio.com">contato@seudominio.com</a>
+			</div>
+		</footer>
+
+		<a class="floating-whatsapp" href={whatsappHref("botao-flutuante")} target="_blank" rel="noreferrer">
+			WhatsApp
+		</a>
 	</body>
 </html>
+
+<style>
+	:root {
+		color-scheme: light;
+		--ink: #191817;
+		--muted: #66615b;
+		--paper: #f7f3ed;
+		--surface: #fffdf8;
+		--line: #ded5ca;
+		--green: #1f6f5f;
+		--green-dark: #154c42;
+		--coral: #cf6346;
+		--plum: #5a405d;
+		--gold: #c79638;
+		--shadow: 0 24px 70px rgba(38, 31, 25, 0.13);
+		font-family:
+			Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	html {
+		background: var(--paper);
+		color: var(--ink);
+		scroll-behavior: smooth;
+	}
+
+	body {
+		margin: 0;
+		font-size: 16px;
+		line-height: 1.55;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.site-header,
+	.site-footer,
+	.fold,
+	.fold-compact {
+		width: min(1180px, calc(100% - 40px));
+		margin-inline: auto;
+	}
+
+	.site-header {
+		position: sticky;
+		top: 0;
+		z-index: 20;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 18px 0;
+		backdrop-filter: blur(18px);
+	}
+
+	.brand {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 52px;
+		height: 52px;
+		border: 1px solid var(--ink);
+		border-radius: 50%;
+		font-weight: 800;
+		letter-spacing: 0;
+	}
+
+	nav,
+	.site-footer div {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 22px;
+		color: var(--muted);
+		font-size: 0.92rem;
+		font-weight: 700;
+	}
+
+	nav a:hover,
+	.site-footer a:hover {
+		color: var(--ink);
+	}
+
+	.fold {
+		padding: 92px 0;
+	}
+
+	.fold-compact {
+		padding: 34px 0;
+	}
+
+	.hero {
+		display: grid;
+		grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+		gap: 64px;
+		align-items: center;
+		min-height: calc(100svh - 88px);
+		padding-top: 40px;
+	}
+
+	.eyebrow {
+		margin: 0 0 14px;
+		color: var(--green);
+		font-size: 0.78rem;
+		font-weight: 900;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	h1,
+	h2,
+	h3,
+	p {
+		margin-top: 0;
+	}
+
+	h1 {
+		max-width: 780px;
+		margin-bottom: 22px;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(3.4rem, 7vw, 6.8rem);
+		line-height: 0.92;
+		font-weight: 500;
+		letter-spacing: 0;
+	}
+
+	h2 {
+		margin-bottom: 18px;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(2.1rem, 4vw, 4rem);
+		line-height: 1;
+		font-weight: 500;
+		letter-spacing: 0;
+	}
+
+	h3 {
+		margin-bottom: 10px;
+		font-size: 1.15rem;
+		line-height: 1.2;
+	}
+
+	.lead {
+		max-width: 620px;
+		color: var(--muted);
+		font-size: clamp(1.05rem, 2vw, 1.28rem);
+	}
+
+	.hero-actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 18px;
+		margin-top: 34px;
+	}
+
+	.button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 50px;
+		padding: 0 22px;
+		border: 1px solid var(--ink);
+		border-radius: 999px;
+		font-weight: 850;
+		line-height: 1.1;
+		transition:
+			transform 180ms ease,
+			box-shadow 180ms ease,
+			background 180ms ease;
+	}
+
+	.button:hover {
+		transform: translateY(-2px);
+		box-shadow: var(--shadow);
+	}
+
+	.button.primary {
+		border-color: var(--green-dark);
+		background: var(--green-dark);
+		color: #fff;
+	}
+
+	.button.secondary {
+		background: var(--surface);
+		color: var(--green-dark);
+	}
+
+	.button.large {
+		min-height: 58px;
+		padding-inline: 30px;
+	}
+
+	.micro-proof {
+		max-width: 260px;
+		color: var(--muted);
+		font-size: 0.92rem;
+	}
+
+	.hero-visual {
+		display: grid;
+		grid-template-columns: 1.05fr 0.95fr;
+		grid-template-rows: 270px 210px;
+		gap: 16px;
+		min-height: 500px;
+	}
+
+	.visual-card {
+		position: relative;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		min-width: 0;
+		padding: 24px;
+		border: 1px solid rgba(25, 24, 23, 0.16);
+		border-radius: 8px;
+		background: var(--surface);
+		box-shadow: var(--shadow);
+	}
+
+	.visual-card strong {
+		position: relative;
+		z-index: 1;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: 2.2rem;
+		line-height: 1;
+		font-weight: 500;
+	}
+
+	.project-label {
+		position: relative;
+		z-index: 1;
+		width: fit-content;
+		padding: 7px 10px;
+		border: 1px solid currentColor;
+		border-radius: 999px;
+		font-size: 0.78rem;
+		font-weight: 850;
+		text-transform: uppercase;
+	}
+
+	.visual-card-large {
+		grid-row: span 2;
+		background:
+			radial-gradient(circle at 72% 30%, rgba(207, 99, 70, 0.34) 0 16%, transparent 17%),
+			linear-gradient(135deg, #fff7e4, #d9efe1 62%, #f2c08a);
+	}
+
+	.visual-card-tall {
+		background: linear-gradient(160deg, #f8dce9, #fff8ed 58%, #cfe4f5);
+	}
+
+	.visual-card-dark {
+		background: #1f2422;
+		color: #fff8ed;
+	}
+
+	.visual-card-line {
+		background:
+			linear-gradient(90deg, transparent 24px, rgba(25, 24, 23, 0.11) 25px, transparent 26px),
+			#fffdf8;
+		background-size: 52px 52px;
+	}
+
+	.cup-mark {
+		position: absolute;
+		right: 30px;
+		bottom: 36px;
+		width: 150px;
+		height: 150px;
+		border: 18px solid var(--ink);
+		border-radius: 50% 50% 44% 44%;
+	}
+
+	.cup-mark::after {
+		content: "";
+		position: absolute;
+		right: -58px;
+		top: 35px;
+		width: 50px;
+		height: 52px;
+		border: 15px solid var(--ink);
+		border-left: 0;
+		border-radius: 0 50% 50% 0;
+	}
+
+	.package-stack {
+		display: grid;
+		gap: 8px;
+		margin-top: auto;
+	}
+
+	.package-stack span {
+		display: block;
+		height: 38px;
+		border: 1px solid rgba(25, 24, 23, 0.18);
+		background: rgba(255, 255, 255, 0.52);
+	}
+
+	.credibility {
+		display: grid;
+		grid-template-columns: 160px 1fr;
+		gap: 24px;
+		align-items: center;
+		border-block: 1px solid var(--line);
+	}
+
+	.credibility p {
+		margin: 0;
+		color: var(--muted);
+		font-size: 0.86rem;
+		font-weight: 850;
+		text-transform: uppercase;
+	}
+
+	.logo-strip {
+		display: grid;
+		grid-template-columns: repeat(5, minmax(120px, 1fr));
+		gap: 12px;
+	}
+
+	.logo-strip span {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 62px;
+		border: 1px solid var(--line);
+		border-radius: 8px;
+		background: rgba(255, 253, 248, 0.62);
+		color: #3c3733;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: 1.1rem;
+	}
+
+	.section-heading {
+		max-width: 760px;
+		margin-bottom: 42px;
+	}
+
+	.section-heading p:not(.eyebrow) {
+		color: var(--muted);
+		font-size: 1.08rem;
+	}
+
+	.case-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 22px;
+	}
+
+	.case-card {
+		overflow: hidden;
+		display: grid;
+		grid-template-columns: minmax(180px, 0.78fr) minmax(0, 1fr);
+		min-height: 420px;
+		border: 1px solid var(--line);
+		border-radius: 8px;
+		background: var(--surface);
+	}
+
+	.case-art {
+		position: relative;
+		overflow: hidden;
+		background:
+			radial-gradient(circle at 50% 30%, color-mix(in srgb, var(--accent), white 34%) 0 18%, transparent 19%),
+			linear-gradient(145deg, color-mix(in srgb, var(--accent), white 72%), var(--accent));
+	}
+
+	.case-art span {
+		position: absolute;
+		left: 22%;
+		width: 56%;
+		border-radius: 8px;
+		background: rgba(255, 253, 248, 0.72);
+		box-shadow: 0 12px 34px rgba(0, 0, 0, 0.12);
+	}
+
+	.case-art span:nth-child(1) {
+		top: 18%;
+		height: 34%;
+	}
+
+	.case-art span:nth-child(2) {
+		top: 57%;
+		height: 12%;
+	}
+
+	.case-art span:nth-child(3) {
+		top: 74%;
+		height: 8%;
+	}
+
+	.case-content {
+		padding: 28px;
+	}
+
+	.case-content > p {
+		margin-bottom: 8px;
+		color: var(--accent);
+		font-size: 0.78rem;
+		font-weight: 900;
+		text-transform: uppercase;
+	}
+
+	dl {
+		display: grid;
+		gap: 18px;
+		margin: 24px 0 0;
+	}
+
+	dt {
+		margin-bottom: 4px;
+		font-size: 0.78rem;
+		font-weight: 900;
+		text-transform: uppercase;
+	}
+
+	dd {
+		margin: 0;
+		color: var(--muted);
+	}
+
+	.section-cta {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 18px;
+		margin-top: 34px;
+		padding: 24px;
+		border: 1px solid var(--line);
+		border-radius: 8px;
+		background: rgba(255, 253, 248, 0.7);
+	}
+
+	.section-cta p {
+		margin: 0;
+		font-weight: 850;
+	}
+
+	.service-grid,
+	.process-list {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 18px;
+	}
+
+	.service-grid article,
+	.process-list article,
+	.testimonial-grid figure {
+		margin: 0;
+		padding: 24px;
+		border: 1px solid var(--line);
+		border-radius: 8px;
+		background: var(--surface);
+	}
+
+	.service-grid p,
+	.process-list p {
+		color: var(--muted);
+	}
+
+	.service-grid span {
+		display: block;
+		margin-top: 22px;
+		color: var(--green);
+		font-size: 0.9rem;
+		font-weight: 850;
+	}
+
+	.testimonials {
+		border-block: 1px solid var(--line);
+	}
+
+	.testimonial-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 22px;
+	}
+
+	blockquote {
+		margin: 0 0 28px;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(1.35rem, 2vw, 1.8rem);
+		line-height: 1.18;
+	}
+
+	figcaption {
+		display: grid;
+		grid-template-columns: 52px 1fr;
+		align-items: center;
+		column-gap: 14px;
+	}
+
+	figcaption span {
+		display: inline-flex;
+		grid-row: span 2;
+		align-items: center;
+		justify-content: center;
+		width: 52px;
+		height: 52px;
+		border-radius: 50%;
+		background: var(--plum);
+		color: #fff;
+		font-weight: 900;
+	}
+
+	figcaption small {
+		color: var(--muted);
+	}
+
+	.process-list span {
+		display: block;
+		margin-bottom: 36px;
+		color: var(--coral);
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: 2.8rem;
+		line-height: 1;
+	}
+
+	.about {
+		display: grid;
+		grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr);
+		gap: 58px;
+		align-items: center;
+	}
+
+	.about p:not(.eyebrow) {
+		max-width: 720px;
+		color: var(--muted);
+		font-size: 1.08rem;
+	}
+
+	.portrait {
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		aspect-ratio: 4 / 5;
+		min-height: 420px;
+		overflow: hidden;
+		border-radius: 8px;
+		background:
+			radial-gradient(circle at 50% 26%, #f6d0bd 0 13%, transparent 14%),
+			linear-gradient(160deg, #24483d 0 34%, #e7b75b 35% 62%, #f4eee6 63%);
+	}
+
+	.portrait span {
+		margin-bottom: 34px;
+		color: #fff;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(4rem, 10vw, 8rem);
+		line-height: 1;
+	}
+
+	.final-cta {
+		max-width: 980px;
+		text-align: center;
+	}
+
+	.final-cta p:not(.eyebrow) {
+		max-width: 720px;
+		margin-inline: auto;
+		color: var(--muted);
+		font-size: 1.1rem;
+	}
+
+	.site-footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px;
+		padding: 34px 0 42px;
+		border-top: 1px solid var(--line);
+	}
+
+	.floating-whatsapp {
+		position: fixed;
+		right: 18px;
+		bottom: 18px;
+		z-index: 30;
+		display: none;
+		align-items: center;
+		justify-content: center;
+		min-height: 52px;
+		padding: 0 20px;
+		border-radius: 999px;
+		background: #1fa463;
+		color: #fff;
+		font-weight: 900;
+		box-shadow: 0 14px 38px rgba(31, 164, 99, 0.28);
+	}
+
+	@media (max-width: 980px) {
+		.hero,
+		.about {
+			grid-template-columns: 1fr;
+		}
+
+		.hero {
+			gap: 34px;
+			min-height: auto;
+		}
+
+		.hero-visual {
+			grid-template-rows: 230px 190px;
+		}
+
+		.case-grid,
+		.testimonial-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.service-grid,
+		.process-list {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		.credibility {
+			grid-template-columns: 1fr;
+		}
+
+		.logo-strip {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (max-width: 720px) {
+		.site-header,
+		.site-footer,
+		.fold,
+		.fold-compact {
+			width: min(100% - 28px, 1180px);
+		}
+
+		.site-header {
+			position: static;
+			align-items: flex-start;
+		}
+
+		nav {
+			justify-content: flex-end;
+			gap: 10px 14px;
+			max-width: 240px;
+			text-align: right;
+		}
+
+		.fold {
+			padding: 64px 0;
+		}
+
+		h1 {
+			font-size: clamp(3.05rem, 17vw, 4.4rem);
+		}
+
+		.hero-visual {
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(4, 180px);
+			min-height: auto;
+		}
+
+		.visual-card-large {
+			grid-row: auto;
+		}
+
+		.case-card {
+			grid-template-columns: 1fr;
+		}
+
+		.case-art {
+			min-height: 250px;
+		}
+
+		.service-grid,
+		.process-list,
+		.logo-strip {
+			grid-template-columns: 1fr;
+		}
+
+		.about {
+			gap: 34px;
+		}
+
+		.portrait {
+			min-height: 340px;
+		}
+
+		.site-footer {
+			flex-direction: column;
+			align-items: flex-start;
+			padding-bottom: 92px;
+		}
+
+		.floating-whatsapp {
+			display: inline-flex;
+		}
+	}
+</style>
